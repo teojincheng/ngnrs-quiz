@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "start": "node src/datasource_connector_tool/main.js"
   },
   "author": "",
   "license": "ISC",

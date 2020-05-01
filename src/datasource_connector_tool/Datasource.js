@@ -1,15 +1,17 @@
+const ENDPOINT_URL = "https://static.ngnrs.io/test/prices";
 class Datasource {
   getPrices() {
-    //console.log("hi");
+    var xhttp = new XMLHttpRequest();
     return new Promise(function (resolve, reject) {
-      resolve("hi");
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          // Typical action to be performed when the document is ready:
+          resolve(xhttp.responseText);
+        }
+      };
+      xhttp.open("GET", "https://static.ngnrs.io/test/prices", true);
+      xhttp.send();
     });
-    /*
-      const promise1 = new Promise(function (resolve, reject) {
-        resolve([1, 2, 3]);
-      });
-      return promise1;
-      */
   }
 }
 
