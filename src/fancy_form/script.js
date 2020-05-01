@@ -26,8 +26,31 @@ function validateEmptyElement(elementId) {
   }
 }
 
+function validateEmptyNumber(elementId) {
+  let elementValue = document.getElementById(elementId).value;
+  if (elementValue <= 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function validateAmount() {
   let isAmountEmpty = validateEmptyElement("input-amount");
+  let isEmptyNumber = validateEmptyNumber("input-amount");
+
+  if (isAmountEmpty || isEmptyNumber) {
+    document.getElementById("amount-validation-msg").innerText =
+      "Cannot be empty";
+    document.getElementById("amount-validation-msg").style.visibility =
+      "visible";
+    return false;
+  } else {
+    document.getElementById("amount-validation-msg").style.visibility =
+      "hidden";
+    document.getElementById("amount-validation-msg").innerText = "message";
+    return true;
+  }
 }
 
 function validateOTP() {
@@ -46,5 +69,6 @@ function validateOTP() {
 function validateForm() {
   let isAddresValid = validateAddress();
   let isOTPNotEmpty = validateOTP();
+  let isAmountValid = validateAmount();
   return isAddresValid;
 }
