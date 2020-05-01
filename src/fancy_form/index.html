@@ -18,8 +18,8 @@
 
     <label for="input-amount">Amount to send</label>
     <!--assumes that we are only using BTC and no other cryptocurrency. -->
-    <input class="same-line" type="number" id="input-amount" placeholder="0.0000" onblur="" /><span
-      class="same-line">BTC</span>
+    <input class="same-line" type="number" id="input-amount" placeholder="0.0000"
+      onblur="return validateAmount()" /><span class="same-line">BTC</span>
     <div class="validation-msg" id="amount-validation-msg">message</div>
     <div class="empty-space"></div>
 

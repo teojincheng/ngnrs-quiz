@@ -41,7 +41,7 @@ function validateAmount() {
 
   if (isAmountEmpty || isEmptyNumber) {
     document.getElementById("amount-validation-msg").innerText =
-      "Cannot be empty";
+      "Amount cannot be empty";
     document.getElementById("amount-validation-msg").style.visibility =
       "visible";
     return false;
@@ -56,7 +56,8 @@ function validateAmount() {
 function validateOTP() {
   let isOTPEmpty = validateEmptyElement("input-otp");
   if (isOTPEmpty) {
-    document.getElementById("otp-validation-msg").innerText = "Cannot be empty";
+    document.getElementById("otp-validation-msg").innerText =
+      "OTP cannot be empty";
     document.getElementById("otp-validation-msg").style.visibility = "visible";
     return false;
   } else {
@@ -70,5 +71,9 @@ function validateForm() {
   let isAddresValid = validateAddress();
   let isOTPNotEmpty = validateOTP();
   let isAmountValid = validateAmount();
-  return isAddresValid;
+
+  if (isAddresValid && isOTPNotEmpty && isAmountValid) {
+    return true;
+  }
+  return false;
 }
