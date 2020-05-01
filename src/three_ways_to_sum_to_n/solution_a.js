@@ -10,5 +10,3 @@ var sum_to_n = function (n) {
   }
   return sum;
 };
-
-//module.exports = sum_to_n;

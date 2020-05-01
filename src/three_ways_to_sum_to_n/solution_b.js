@@ -13,5 +13,3 @@ var sum_to_n = function (n) {
   }
   return sum_to_n(n - 1) + n;
 };
-
-//module.exports = sum_to_n;

@@ -20,5 +20,3 @@ var sum_to_n = function (n) {
   memo[n] = sum_to_n(n - 1) + n;
   return memo[n];
 };
-
-//module.exports = sum_to_n;
