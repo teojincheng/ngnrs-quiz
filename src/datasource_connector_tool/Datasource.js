@@ -23,5 +23,3 @@ class Datasource {
     });
   }
 }
-
-module.exports = Datasource;
