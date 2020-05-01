@@ -65,3 +65,11 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+.empty-space {
+  padding-top: 10px;
+}
+
+.validation-msg {
+  visibility: hidden;
+}
