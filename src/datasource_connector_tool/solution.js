@@ -10,13 +10,25 @@ const ENDPOINT_URL = "https://static.ngnrs.io/test/prices";
  * and we can use module.exports to export this class.
  */
 class Datasource {
+  generateQuote(currencyPairStr) {
+    const lastIndex = currencyPairStr.length;
+    const startIndex = currencyPairStr.length - 3;
+    let quote = currencyPairStr.substring(startIndex, lastIndex);
+    return quote;
+  }
+
+  calcuateMid(currencyPairObj) {
+    let mid = (currencyPairObj.buy + currencyPairObj.sell) / 2 / 100;
+    return mid;
+  }
+
   /**
    * getPrices is a function that returns a promise which
    * resolves the response of a xmlhttprequest.
    *
    */
-
   getPrices() {
+    let self = this;
     var xhttp = new XMLHttpRequest();
     return new Promise(function (resolve, reject) {
       xhttp.onreadystatechange = function () {
@@ -26,9 +38,10 @@ class Datasource {
           let resultArr = [];
           for (let i = 0; i < arrOfCurrencyPair.length; i++) {
             let currPairObj = {};
+            let newQuote = self.generateQuote(arrOfCurrencyPair[i].pair);
             currPairObj.pair = arrOfCurrencyPair[i].pair;
-            currPairObj.mid =
-              (arrOfCurrencyPair[i].buy + arrOfCurrencyPair[i].sell) / 2;
+            currPairObj.mid = self.calcuateMid(arrOfCurrencyPair[i]);
+            currPairObj.quote = newQuote;
             resultArr.push(currPairObj);
           }
           resolve(resultArr);
@@ -48,10 +61,11 @@ class Datasource {
  * call the datasource object's getPrice() function with a .then() to invoke the
  * function after the promise is resolved.
  */
+
 let ds = new Datasource();
 
 ds.getPrices().then(function (prices) {
   prices.forEach((price) => {
-    console.log(price.pair, price.mid);
+    console.log(price.pair, price.mid, price.quote);
   });
 });
