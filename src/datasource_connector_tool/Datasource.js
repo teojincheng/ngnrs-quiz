@@ -13,6 +13,11 @@ class Datasource {
     return quote;
   }
 
+  calcuateMid(currencyPairObj) {
+    let mid = (currencyPairObj.buy + currencyPairObj.sell) / 2 / 100;
+    return mid;
+  }
+
   /**
    * getPrices is a function that returns a promise which
    * resolves the response of a xmlhttprequest.
@@ -31,8 +36,7 @@ class Datasource {
             let currPairObj = {};
             let newQuote = self.generateQuote(arrOfCurrencyPair[i].pair);
             currPairObj.pair = arrOfCurrencyPair[i].pair;
-            currPairObj.mid =
-              (arrOfCurrencyPair[i].buy + arrOfCurrencyPair[i].sell) / 2 / 100;
+            currPairObj.mid = self.calcuateMid(arrOfCurrencyPair[i]);
             currPairObj.quote = newQuote;
             resultArr.push(currPairObj);
           }
