@@ -42,3 +42,5 @@ Mid price for ETHUSD is 373.555 USD.
 
 Please submit your solution using the files provided in this folder  
 [solution.js](./solution.js)
+
+Solution also accesible online: https://repl.it/@teojincheng/datasource-connector

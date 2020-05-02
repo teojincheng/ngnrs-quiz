@@ -1,5 +1,17 @@
 This repository contains the answer to the javascript coding challenge.
 
+The answers to the questions are found inside the files inside the various folders.
+Alternatively there are repl created based on my solutions.
+
+fancy_form: https://repl.it/@teojincheng/fancy-form
+
+datasource_connector_tool: https://repl.it/@teojincheng/datasource-connector
+
+three_ways_to_sum_to_n:  
+https://repl.it/@teojincheng/threeWayToSumNa  
+https://repl.it/@teojincheng/threeWayToSumNb  
+https://repl.it/@teojincheng/threeWayToSumNc
+
 The structure of this repository is described below:
 
 ```

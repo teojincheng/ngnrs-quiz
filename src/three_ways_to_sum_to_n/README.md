@@ -16,3 +16,9 @@ Please submit your solution using the files provided in this folder
 [solution_a.js](./solution_a.js)  
 [solution_b.js](./solution_b.js)  
 [solution_c.js](./solution_c.js)
+
+Solutions also accesible online:
+
+https://repl.it/@teojincheng/threeWayToSumNa  
+https://repl.it/@teojincheng/threeWayToSumNb  
+https://repl.it/@teojincheng/threeWayToSumNc

@@ -12,3 +12,5 @@ Task: Create a sign up form base on the template provided in this folder.
 
 Please submit your solution using the files provided in this folder, including any additional files your solution may use  
 [index.html](./index.html)
+
+Solution also accesible online: https://repl.it/@teojincheng/fancy-form
