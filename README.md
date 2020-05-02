@@ -1,6 +1,6 @@
 This repository contains the answer to the javascript coding challenge.
 
-The answers to the questions are found inside the files inside the various folders.  
+The answers to the questions are arranged in various folders. Structure of this repo found at the bottom of this file.  
 Alternatively there are repl created based on my solutions:
 
 fancy_form: https://repl.it/@teojincheng/fancy-form
